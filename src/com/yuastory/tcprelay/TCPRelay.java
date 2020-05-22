@@ -46,13 +46,11 @@ public class TCPRelay {
 			byte[] buffer = new byte[1024];
 			try {
 				while ((n = in.read(buffer)) != -1) {
-					System.err.println(new String(buffer, 0, n));
 					out.write(buffer, 0, n);
 				}
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			System.out.println("close...");
 		}
 	}
 
